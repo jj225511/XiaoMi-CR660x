@@ -18,12 +18,12 @@
 sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把YOU-R4A修改你喜欢的就行（不能纯数字或者使用中文）
-sed -i '/uci commit system/i\uci set system.@system[0].hostname='XXKDB'' package/lean/default-settings/files/zzz-default-settings
+sed -i '/uci commit system/i\uci set system.@system[0].hostname='XiaoWanSM'' package/lean/default-settings/files/zzz-default-settings
 
 # 版本号里显示一个自己的名字（ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ 这些都是后增加的）
 #sed -i "s/OpenWrt /ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/OpenWrt /星新课代表/g" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/Xiaomi Mi Router CR6606/星新课代表制作出品/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-cr6606.dts
+sed -i "s/OpenWrt /XiaoWanSM/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/Xiaomi Mi Router CR6606/XiaoWanSM出品/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-cr6606.dts
 
 #删除原默认主题
 rm -rf package/lean/luci-theme-argon
@@ -124,5 +124,5 @@ sed -i 's/ssid=OpenWrt/ssid=XXKDB/g' package/kernel/mac80211/files/lib/wifi/mac8
 # 修改默认wifi密码key为Xiaomi_R4A
 sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #使用sed 在第四行后添加新字
-#sed -e 120a\set wireless.default_radio${devidx}.key=XXKDB-R4A package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -e 120a\set wireless.default_radio${devidx}.key=XiaoWanSM package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\set wireless.default_radio${devidx}.key=password' package/kernel/mac80211/files/lib/wifi/mac80211.sh
