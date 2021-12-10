@@ -30,8 +30,8 @@ sed -i "s/OpenWrt /ZYZH/g" package/lean/default-settings/files/zzz-default-setti
 rm -rf package/lean/luci-theme-bootstrap
 rm -rf package/lean/luci-theme-material
 rm -rf package/lean/luci-theme-netgear
-#rm -rf package/lean/luci-app-privoxy
-#rm -rf package/lean/luci-theme-ifit
+rm -rf package/lean/luci-app-privoxy
+rm -rf package/lean/luci-theme-ifit
 
 #下载主题luci-theme-argon
 #git clone https://github.com/YL2209/luci-theme-argon.git package/lean/luci-theme-argon
