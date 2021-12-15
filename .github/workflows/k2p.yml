@@ -40,7 +40,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
+      fetch-depth: 0
+      
+    - name: Cache
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        prefix: ${{ github.workspace }}/openwrt
+        
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
